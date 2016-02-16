@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="memberBean.firstname">
+		<field-validator type="requiredstring">
+			<message>
+				Emri është i detyrueshëm per t'u plotësuar.
+			</message>
+		</field-validator>
+	</field>
+	<field name="memberBean.lastname">
+		<field-validator type="requiredstring">
+			<message>
+				Mbiemri është i detyrueshëm për t'u plotësuar.
+			</message>
+		</field-validator>
+	</field>
+	<field name="memberBean.email">
+		<field-validator type="requiredstring">
+			<message>
+				Adresa e-mail është e detyrueshme për t'u plotësuar.
+			</message>
+		</field-validator>
+		<field-validator type="email">
+			<message>Adresa e-mail e plotësuar nuk është e vlefshme.</message>
+		</field-validator>
+	</field>
+	<field name="memberBean.password">
+		<field-validator type="requiredstring">
+			<message>
+				Fjalëkalimi është i detyrueshëm për t'u plotësuar.
+			</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">5</param>
+			<message>Fjalëkalimi duhet të përmbajë të paktën ${minLength}
+				karaktere.
+			</message>
+		</field-validator>
+	</field>
+	<field name="confirmPassword">
+		<field-validator type="fieldexpression">
+			<param name="expression">password == confirmPassword></param>
+			<message>Fjalakalimet duhet të përputhen!</message>
+		</field-validator>
+	</field>
+	<field name="memberBean.birthdate">
+		<field-validator type="requiredstring">
+			<message>
+				Datëlindja është e detyrueshme për t'u plotësuar.
+			</message>
+		</field-validator>
+	</field>
+	<field name="memberBean.address">
+		<field-validator type="requiredstring">
+			<message>
+				Adresa e vendbanimit është e detyrueshme për t'u plotësuar.
+			</message>
+		</field-validator>
+	</field>
+</validators>
