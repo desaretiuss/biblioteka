@@ -40,12 +40,20 @@
 			</message>
 		</field-validator>
 	</field>
-	<field name="confirmPassword">
+	<!--  NUK FUNKSIONON
+	==========================================================
+	<field name="memberBean.confirmPassword">
+		<field-validator type="requiredstring">
+			<message>
+				Fjalëkalimi është i detyrueshëm për t'u plotësuar.
+			</message>
+		</field-validator>
 		<field-validator type="fieldexpression">
-			<param name="expression">password == confirmPassword></param>
-			<message>Fjalakalimet duhet të përputhen!</message>
+			<param name="expression">(mbemberBean.confirmPassword.equals(memberBean.password)) </param>
+			<message>Fjalëkalimet duhet të përputhen!</message>
 		</field-validator>
 	</field>
+	-->
 	<field name="memberBean.birthdate">
 		<field-validator type="requiredstring">
 			<message>

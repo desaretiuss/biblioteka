@@ -6,6 +6,7 @@ public class Member {
 	private String lastname;
 	private String email;
 	private String password;
+	private String confirmPassword;
 	private int mobile;
 	private String birthdate;
 	private String address;
@@ -109,6 +110,14 @@ public class Member {
 
 	public void setActivationSalt(byte[] activationSalt) {
 		this.activationSalt = activationSalt;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 
 }

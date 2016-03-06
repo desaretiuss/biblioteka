@@ -12,15 +12,67 @@
 		<!-- Register Action -->
 		<action name="register"
 			class="org.ikubinfo.biblioteka.controller.RegisterAction" method="execute">
-			<result name="error">/view/Register.jsp</result>
-			<result name="input">/view/Register.jsp</result>
-			<result name="success">/view/RegistrationSuccess.jsp</result>
+			<result name="error">/view/register/Register.jsp</result>
+			<result name="input">/view/register/Register.jsp</result>
+			<result name="success">/view/register/RegistrationSuccess.jsp</result>
 		</action>
 
-		<!-- Confirm Action -->
-		<action name="confirm"
-			class="org.ikubinfo.biblioteka.controller.RegisterAction" method="confirm">
-			<result>/view/Confirm.jsp</result>
+		<!-- Confirm Register Action -->
+		<action name="confirm" class="org.ikubinfo.biblioteka.controller.ConfirmAction"
+			method="execute">
+			<result name="success">/view/register/Confirm.jsp</result>
+			<result name="error">/view/register/Confirm.jsp</result>
+		</action>
+
+
+		<!--Librarian Homepage Action -->
+		<action name="librarian">
+			<result>/view/librarian/Home.jsp</result>
+		</action>
+
+		<!--Show AddBook -->
+		<action name="showAddBook">
+			<result>/view/librarian/AddBook.jsp</result>
+		</action>
+
+		<!-- Add Book Action -->
+		<action name="addBook"
+			class="org.ikubinfo.biblioteka.controller.LibrarianAction" method="addBook">
+			<result name="success">/view/librarian/AddBook.jsp</result>
+			<result name="error">/view/librarian/AddBook.jsp</result>
+			<result name="input">/view/librarian/AddBook.jsp</result>
+		</action>
+
+		<!--Show RemoveBook -->
+		<action name="showRemoveBook">
+			<result>/view/librarian/RemoveBook.jsp</result>
+		</action>
+
+		<!-- Remove Book Action -->
+		<action name="removeBook"
+			class="org.ikubinfo.biblioteka.controller.LibrarianAction" method="removeBook">
+			<result name="success">/view/librarian/RemoveBook.jsp</result>
+			<result name="error">/view/librarian/RemoveBook.jsp</result>
+			<result name="input">/view/librarian/RemoveBook.jsp</result>
+		</action>
+
+
+		<!--ChooseBookByIsbn -->
+		<action name="select">
+			<result>/view/librarian/ChooseBookByIsbn.jsp</result>
+		</action>
+
+		<!-- Edit Book Data -->
+		<action name="editBookData"
+			class="org.ikubinfo.biblioteka.controller.LibrarianAction" method="editBookData">
+			<result name="success">/view/librarian/UpdateBook.jsp</result>
+		</action>
+
+		<!-- Update Book -->
+		<action name="updateBook"
+			class="org.ikubinfo.biblioteka.controller.LibrarianAction" method="updateBook">
+			<result name="success">/view/librarian/UpdateBook.jsp</result>
+			<result name="error">/view/librarian/UpdateBook.jsp</result>
 		</action>
 	</package>
 </struts>

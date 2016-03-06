@@ -21,6 +21,10 @@ body {
 	margin-left: 155px;
 	color: rgb(178, 68, 66);
 }
+
+.action-error{
+    color: red;
+}
 </style>
 </head>
 <body>
@@ -31,10 +35,8 @@ body {
 			<h1>Formulari i regjistrimit</h1>
 		</div>
 
-		<s:if test="hasActionErrors()">
-			<s:actionerror escape="false" />
-		</s:if>
-
+			<s:actionerror escape="false" cssClass="action-error" />
+		
 		<form class="form-horizontal" role="form" method="post"
 			action="register" novalidate>
 			<div class="form-group">
@@ -72,12 +74,11 @@ body {
 				</div>
 			</div>
 			<div class="form-group">
-				<s:fielderror fieldName="confirmPassword" cssClass="field-error" />
-				<label for="confirmPassword" class="col-sm-2 control-label">Rishkruaj
-					Fjalëkalimin</label>
+		    	<s:fielderror fieldName="memberBean.confirmPassword" cssClass="field-error" />
+				<label for="confirmPassword" class="col-sm-2 control-label">Fjalëkalimi</label>
 				<div class="col-sm-4">
-					<input type="password" class="form-control" name="confirmPassword"
-						id="confirmPassword" placeholder="Fjalëkalimi" />
+					<input type="password" class="form-control" name="memberBean.confirmPassword"
+						id="confirmPassword" placeholder="Rishkruaj Fjalëkalimin" />
 				</div>
 			</div>
 			<div class="form-group">

@@ -30,7 +30,7 @@ public class RegisterAction extends ActionSupport {
 
 		if (memberModel.doesEmailExists(memberBean.getEmail())) {
 
-			addActionError(getText("error.registration.email_exists"));
+			addActionError(getText("error.registration.email.exists"));
 
 		} else if (!(memberModel.addNewMember(memberBean))) {
 
@@ -45,23 +45,6 @@ public class RegisterAction extends ActionSupport {
 
 	}
 
-	public String confirm() {
-
-		String result = ERROR;
-
-		if (memberModel.activateAccount(getConfirmID(), getEmailID())) {
-
-			result = SUCCESS;
-			addActionMessage(getText("success.confirm.activation.succeeded"));
-
-		} else {
-
-			addActionError(getText("error.confirm.activation.failed"));
-
-		}
-
-		return result;
-	}
 
 	public Member getMemberBean() {
 		return memberBean;
